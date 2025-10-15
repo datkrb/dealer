@@ -1,0 +1,510 @@
+/* Main Content Styles */
+.main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 3rem;
+  border: 1px solid var(--border-color);
+  border-radius: 3%;
+}
+
+.main__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ===== Featured Deal Section ===== */
+.main__featured-deal {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 2rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Left Column ===== */
+.featured-deal__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.featured-deal__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.featured-deal__image {
+  background: #ef4d37; /* màu cam đỏ trong ảnh */
+  height: 220px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.featured-deal__description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== Right Column ===== */
+.featured-deal__right {
+  border: 1px dashed #d8d8d8;
+  border-radius: 4px;
+  background: #fafafa;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+/* “Tem răng cưa” hiệu ứng */
+.featured-deal__right::before,
+.featured-deal__right::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #fafafa 0,
+    #fafafa 5px,
+    transparent 5px,
+    transparent 10px
+  );
+}
+
+.featured-deal__right::before {
+  top: -5px;
+}
+
+.featured-deal__right::after {
+  bottom: -5px;
+  transform: rotate(180deg);
+}
+
+/* Sub Title */
+.featured-deal__subtitle {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Timer */
+.featured-deal__timer {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Discount Section */
+.featured-deal__discount {
+  margin: 1rem 0;
+}
+
+.featured-deal__discount-title {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 0.25rem;
+}
+
+.featured-deal__discount-percent {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+/* Pricing Section */
+.featured-deal__pricing {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.featured-deal__value {
+  font-weight: 600;
+}
+
+.featured-deal__savings {
+  color: #999;
+}
+
+/* ===== Buy Button ===== */
+.featured-deal__buy-section {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.featured-deal__buy-btn {
+  background: linear-gradient(to bottom, #a4d063 0%, #7ec242 100%);
+  border: 1px solid #6fae38;
+  border-radius: 4px;
+  color: #333;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.featured-deal__buy-btn:hover {
+  background: linear-gradient(to bottom, #8cc94f 0%, #6dbd2f 100%);
+  transform: translateY(-1px);
+}
+
+/* ===== Remove extra parts not in image ===== */
+.featured-deal__actions {
+  display: none;
+}
+.main_deals-listing {
+  width: 100%;
+}
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  padding: 10px 24px;
+  gap: 5px;
+
+  & .deal-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border-color);
+  }
+  & .deal-card_img {
+    border: 1px solid var(--border-color);
+    margin: 10px;
+    width: 90%;
+    height: 220px;
+    background-color: #dc3545;
+  }
+
+  & .deal-card__meta {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    & .deal-card__meta_body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2 px;
+      & p {
+        margin: 0px;
+      }
+    }
+    & span {
+      font-weight: bold;
+    }
+  }
+
+  & .deal-card__footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    margin: 3px 0px;
+
+    & .deal-card__timer {
+      font-size: 12px;
+      text-align: left;
+    }
+
+    & .deal-card__cta {
+      border: 1px solid green;
+      background-color: #7ec242;
+    }
+  }
+}
+
+.main__sidebar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+  gap: 0; /* không khoảng cách giữa các cột */
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #fff;
+  padding: 20px 0;
+}
+
+/* Mỗi section trong sidebar */
+.sidebar__section {
+  padding: 0 20px;
+  border-right: 1px dashed #dcdcdc;
+}
+
+.sidebar__section:last-child {
+  border-right: none;
+}
+
+/* Card wrapper */
+.sidebar-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Tiêu đề mỗi khối */
+.sidebar-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Nội dung văn bản */
+.sidebar-card__text {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* --------------------------
+   TWITTER FEED BLOCK
+--------------------------- */
+
+.twitter-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.twitter-feed__item {
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #e5e5e5;
+}
+
+.twitter-feed__item:last-child {
+  border-bottom: none;
+}
+
+.twitter-feed__text {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.twitter-feed__link {
+  color: #7fbf4d; /* xanh lá nhạt như link trong ảnh */
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.twitter-feed__link:hover {
+  text-decoration: underline;
+}
+
+.twitter-feed__time {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #999;
+  background: #f2f2f2;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* --------------------------
+   OTHER PAGES (nav links)
+--------------------------- */
+
+.pages-nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pages-nav__item {
+  border-bottom: 1px dashed #e5e5e5;
+}
+
+.pages-nav__item:last-child {
+  border-bottom: none;
+}
+
+.pages-nav__link {
+  display: block;
+  padding: 6px 0;
+  color: #7fbf4d;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.pages-nav__link:hover {
+  color: #5ca02e;
+  text-decoration: underline;
+}
+
+.main__sidebar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.main__dealers {
+  width: 90%;
+  margin-top: 12px;
+  & .main_dealers-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+}
+
+/* ===========================
+   BUTTON ANIMATIONS - ADDED
+   =========================== */
+
+/* Hiệu ứng cho nút Buy this deal */
+.featured-deal__buy-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 3px 10px rgba(126, 194, 66, 0.3);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.featured-deal__buy-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.featured-deal__buy-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.featured-deal__buy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(126, 194, 66, 0.4);
+}
+
+.featured-deal__buy-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(126, 194, 66, 0.3);
+}
+
+/* Hiệu ứng cho nút SEE DEAL */
+.deal-card__cta {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(126, 194, 66, 0.2);
+  border: none !important;
+  padding: 8px 12px;
+  border-radius: 3px;
+  color: white;
+}
+
+.deal-card__cta::after {
+  content: "→";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: right 0.3s ease;
+  font-weight: bold;
+}
+
+.deal-card__cta:hover {
+  background: linear-gradient(to bottom, #8cc94f 0%, #6dbd2f 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(126, 194, 66, 0.3);
+  padding-right: 30px;
+}
+
+.deal-card__cta:hover::after {
+  right: 12px;
+}
+
+.deal-card__cta:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Hiệu ứng cho navigation links trong sidebar */
+.pages-nav__link {
+  position: relative;
+  transition: all 0.3s ease;
+  padding-left: 8px;
+}
+
+.pages-nav__link::before {
+  content: "▸";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.pages-nav__link:hover {
+  padding-left: 16px;
+  text-decoration: none !important;
+  background: rgba(127, 191, 77, 0.1);
+  border-radius: 3px;
+  margin: 0 -8px;
+  padding-right: 8px;
+}
+
+.pages-nav__link:hover::before {
+  left: 4px;
+  opacity: 1;
+  color: #7fbf4d;
+}
+
+/* Hiệu ứng cho Twitter links */
+.twitter-feed__link {
+  position: relative;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+}
+
+.twitter-feed__link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #7fbf4d;
+  transition: width 0.3s ease;
+}
+
+.twitter-feed__link:hover::after {
+  width: 100%;
+}
