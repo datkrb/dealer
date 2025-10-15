@@ -52,9 +52,14 @@
     gap: 1rem;
   }
   .deals-grid {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr !important; /* chuyển thành 1 cột */
     padding: 5px;
     gap: 10px;
+  }
+  .deals-grid__item {
+    width: 100%;
+    margin: 0 auto;
   }
   .main__sidebar {
     grid-template-columns: 1fr;
@@ -99,8 +104,16 @@
   .main__featured-deal {
     padding: 0.5rem;
   }
+  .deals-grid {
+    display: grid;
+    grid-template-columns: 1fr !important; /* luôn 1 cột trên màn hình nhỏ */
+    padding: 0;
+    gap: 8px;
+  }
   .deals-grid__item {
     padding: 0.5rem;
+    width: 100%;
+    margin: 0 auto;
   }
   .main__dealers .main_dealers-list {
     font-size: 0.9rem;
@@ -115,11 +128,58 @@
 }
 
 /* ===========================
-   RESPONSIVE BUTTON ANIMATIONS - ADDED
+   RESPONSIVE BUTTON ANIMATIONS
    =========================== */
 
 /* Giảm hiệu ứng trên mobile để tối ưu hiệu suất */
 @media (max-width: 768px) {
+  .header__newsletter-form,
+  .header__newsletter-input-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .header__newsletter-button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .header__nav-list {
+    display: flex;
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    gap: 2rem; /* khoảng cách đều giữa các mục */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__nav-list li {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .header__nav-list li:not(:last-child)::after {
+    content: none;
+  }
+
+  /* Newsletter button xuống dưới box */
+  .header__newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  .header__newsletter-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .header__newsletter-button {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
   .featured-deal__buy-btn:hover {
     transform: none;
     box-shadow: 0 3px 10px rgba(126, 194, 66, 0.3);
